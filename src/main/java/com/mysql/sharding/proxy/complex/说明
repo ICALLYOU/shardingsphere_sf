@@ -1,0 +1,14 @@
+复合分片规则：分库按照年份进行取余然后分库。数据库名为Year_年份，每个数据库分为十二个表，表名为Mouth_月份。
+
+pom.xml:maven数据仓库配置文件，用于配置依赖。
+OrderDBComplex：分库算法接口。
+OrderTableComplex：分表算法接口。
+Settings:分库分表配置文件，按业务需求使用这个文件。
+ComplexUtils：主算法文件，提供算法的类和方法。
+org.apache.shardingsphere.sharding.api.ShardingAlgorithm:shardingsphere-proxy接口声明文件，内容已写好。
+说明：说明文档。
+
+算法逻辑：
+1、switch匹配拆字符串的算法。
+2、正则表达式拆解字符串。
+3、返回算法运算结果。
